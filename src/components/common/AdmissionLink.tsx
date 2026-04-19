@@ -12,7 +12,10 @@ export function AdmissionLink({ className, children }: AdmissionLinkProps) {
 	const [href, setHref] = useState(admission.beforeSwitchUrl)
 	useEffect(() => {
 		const now = Date.now()
-		setHref(now >= admission.switchAt ? admission.afterSwitchUrl : admission.beforeSwitchUrl)
+		const url = now >= admission.switchAt ? admission.afterSwitchUrl : admission.beforeSwitchUrl
+		// Static export: build-time HTML always has beforeSwitchUrl; client updates after mount.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
+		setHref(url)
 	}, [])
 	return (
 		<a
