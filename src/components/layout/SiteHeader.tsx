@@ -1,9 +1,15 @@
 'use client'
 
-import { useState } from 'react'
-import { navigation } from '@/data/navigation'
 import { useApplicationDialog } from '@/components/form/useApplicationDialog'
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetTrigger
+} from '@/components/ui/sheet'
+import { navigation } from '@/data/navigation'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export function SiteHeader() {
 	const dialog = useApplicationDialog()
@@ -15,43 +21,60 @@ export function SiteHeader() {
 	}
 
 	return (
-		<header className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-6 w-full">
-			<span className="text-white font-medium italic tracking-tight text-lg select-none">
-				онлайн…продукты.
-			</span>
+		<header className="flex w-full items-center justify-between px-4 py-6 sm:px-12 md:px-8">
+			<Image
+				className="md:hidden"
+				src="/icons/logo-mini.svg"
+				alt="Онлайн продукты."
+				width={40}
+				height={45}
+			/>
 
-			<nav className="hidden md:flex gap-6 md:gap-8">
+			<Image
+				className="hidden md:block"
+				src="/icons/logo.svg"
+				alt="Онлайн продукты."
+				width={288}
+				height={45}
+			/>
+
+			<nav className="hidden gap-6 md:flex md:gap-15">
 				{navigation.map(item => (
 					<a
 						key={item.href}
 						href={item.href}
-						className="text-sm text-white/80 hover:text-white transition-colors"
+						className="text-lg text-white/80 transition-colors hover:text-white"
 					>
 						{item.label}
 					</a>
 				))}
 			</nav>
 
-			<button
-				className="hidden md:block border border-white text-white rounded-full px-5 py-2 text-sm hover:bg-white hover:text-black transition-colors"
-				onClick={dialog.open}
+			<Sheet
+				open={sheetOpen}
+				onOpenChange={setSheetOpen}
 			>
-				Оставить заявку
-			</button>
-
-			<Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
 				<SheetTrigger asChild>
-					<button className="md:hidden text-white text-2xl leading-none" aria-label="Открыть меню">
+					<button
+						className="text-2xl leading-none text-white md:hidden"
+						aria-label="Открыть меню"
+					>
 						☰
 					</button>
 				</SheetTrigger>
-				<SheetContent side="right" className="bg-white flex flex-col p-6">
-					<nav className="flex flex-col gap-6 mt-8">
+				<SheetContent
+					side="right"
+					className="flex flex-col bg-white p-6"
+				>
+					<nav className="mt-8 flex flex-col gap-6">
 						{navigation.map(item => (
-							<SheetClose asChild key={item.href}>
+							<SheetClose
+								asChild
+								key={item.href}
+							>
 								<a
 									href={item.href}
-									className="text-base text-black/80 hover:text-black transition-colors"
+									className="text-base text-black/80 transition-colors hover:text-black"
 								>
 									{item.label}
 								</a>
@@ -60,7 +83,7 @@ export function SiteHeader() {
 					</nav>
 					<div className="mt-auto">
 						<button
-							className="w-full border border-black text-black rounded-full px-5 py-2 text-sm hover:bg-black hover:text-white transition-colors"
+							className="w-full rounded-full border border-black px-5 py-2 text-sm text-black transition-colors hover:bg-black hover:text-white"
 							onClick={handleApply}
 						>
 							Оставить заявку
