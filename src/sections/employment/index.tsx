@@ -17,15 +17,40 @@ export default function Employment() {
 				</SectionHeading>
 				{/* Right */}
 				<div className="relative">
-					<div className="relative mb-4 hidden aspect-3/2 md:block">
+					{/* Desktop grid */}
+					<div className="hidden md:block relative aspect-3/2">
 						<GridFrame
 							columns={2}
 							rows={3}
-							className="absolute inset-0 h-full w-full text-(--color-line-dark)"
+							className="absolute inset-0 h-full w-full text-line-dark"
 							strokeWidth={0.5}
 						/>
+						{/* Items in grid cells */}
+						<div className="absolute inset-0 grid grid-cols-2 grid-rows-3">
+							{/* Row 1 - Empty */}
+							<div />
+							<div />
+							
+							{/* Row 2 */}
+							<div className="flex items-center p-6">
+								<NumberedItem number={1} title={employmentRoles[0].title} subtitle={employmentRoles[0].subtitle} />
+							</div>
+							<div className="flex items-center p-6">
+								<NumberedItem number={2} title={employmentRoles[1].title} subtitle={employmentRoles[1].subtitle} />
+							</div>
+							
+							{/* Row 3 */}
+							<div className="flex items-center p-6">
+								<NumberedItem number={3} title={employmentRoles[2].title} subtitle={employmentRoles[2].subtitle} />
+							</div>
+							<div className="flex items-center p-6">
+								<NumberedItem number={4} title={employmentRoles[3].title} subtitle={employmentRoles[3].subtitle} />
+							</div>
+						</div>
 					</div>
-					<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+					
+					{/* Mobile version */}
+					<div className="md:hidden grid grid-cols-1 gap-6">
 						{employmentRoles.map(role => (
 							<NumberedItem
 								key={role.number}
@@ -34,6 +59,12 @@ export default function Employment() {
 								subtitle={role.subtitle}
 							/>
 						))}
+					</div>
+					
+					{/* Roles 5 and 6 below grid */}
+					<div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+						<NumberedItem number={5} title={employmentRoles[4].title} subtitle={employmentRoles[4].subtitle} />
+						<NumberedItem number={6} title={employmentRoles[5].title} subtitle={employmentRoles[5].subtitle} />
 					</div>
 				</div>
 			</div>
