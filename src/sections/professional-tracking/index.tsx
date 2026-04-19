@@ -12,10 +12,10 @@ export default function ProfessionalTracking() {
 				{/* Left */}
 				<div className="flex flex-col gap-6">
 					<SectionHeading size="h2">Профессиональный трекинг и акселерация</SectionHeading>
-				<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
-					Университет выступает партнером каждого студента и выпускника программы.
-				</p>
-				<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
+					<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
+						Университет выступает партнером каждого студента и выпускника программы.
+					</p>
+					<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
 						Команды получают экспертное сопровождение на всех ключевых этапах работы над продуктом.
 					</p>
 					<div className="mt-4 md:hidden">
