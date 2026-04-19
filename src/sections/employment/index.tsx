@@ -27,11 +27,7 @@ export default function Employment() {
 						/>
 						{/* Items in grid cells */}
 						<div className="absolute inset-0 grid grid-cols-2 grid-rows-3">
-							{/* Row 1 - Empty */}
-							<div />
-							<div />
-							
-							{/* Row 2 */}
+							{/* Row 1 */}
 							<div className="flex items-center p-6">
 								<NumberedItem number={1} title={employmentRoles[0].title} subtitle={employmentRoles[0].subtitle} />
 							</div>
@@ -39,12 +35,20 @@ export default function Employment() {
 								<NumberedItem number={2} title={employmentRoles[1].title} subtitle={employmentRoles[1].subtitle} />
 							</div>
 							
-							{/* Row 3 */}
+							{/* Row 2 */}
 							<div className="flex items-center p-6">
 								<NumberedItem number={3} title={employmentRoles[2].title} subtitle={employmentRoles[2].subtitle} />
 							</div>
 							<div className="flex items-center p-6">
 								<NumberedItem number={4} title={employmentRoles[3].title} subtitle={employmentRoles[3].subtitle} />
+							</div>
+							
+							{/* Row 3 */}
+							<div className="flex items-center p-6">
+								<NumberedItem number={5} title={employmentRoles[4].title} subtitle={employmentRoles[4].subtitle} />
+							</div>
+							<div className="flex items-center p-6">
+								<NumberedItem number={6} title={employmentRoles[5].title} subtitle={employmentRoles[5].subtitle} />
 							</div>
 						</div>
 					</div>
@@ -59,12 +63,6 @@ export default function Employment() {
 								subtitle={role.subtitle}
 							/>
 						))}
-					</div>
-					
-					{/* Roles 5 and 6 below grid */}
-					<div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-						<NumberedItem number={5} title={employmentRoles[4].title} subtitle={employmentRoles[4].subtitle} />
-						<NumberedItem number={6} title={employmentRoles[5].title} subtitle={employmentRoles[5].subtitle} />
 					</div>
 				</div>
 			</div>
