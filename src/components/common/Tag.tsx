@@ -11,15 +11,12 @@ export default function Tag({
 	variant = 'light',
 	size = 'md',
 	className,
-	children,
+	children
 }: TagProps) {
 	return (
 		<span
 			className={cn(
-				'inline-flex items-center rounded-[var(--radius-tag)] border border-solid bg-transparent text-sm',
-				variant === 'dark'
-					? 'border-[var(--color-line-dark)]'
-					: 'border-[var(--color-line)]',
+				'inline-flex items-center rounded-full border-2 border-solid bg-transparent text-xl',
 				size === 'sm' ? 'px-3 py-1' : 'px-5 py-2',
 				className
 			)}

@@ -11,13 +11,15 @@ export default function NumberedItem({
 	number,
 	title,
 	subtitle,
-	className,
+	className
 }: NumberedItemProps) {
 	return (
 		<div className={cn('flex flex-col', className)}>
-			<span className='text-sm opacity-60'>({number})</span>
-			<span className='text-base font-medium'>{title}</span>
-			{subtitle && <span className='text-sm opacity-60'>{subtitle}</span>}
+			<span className="text-4xl font-semibold">({number})</span>
+			<span className="ml-12 text-left text-xl leading-tight font-semibold">
+				{title}
+			</span>
+			{subtitle && <span className="text-sm opacity-60">{subtitle}</span>}
 		</div>
 	)
 }

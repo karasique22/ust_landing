@@ -13,22 +13,22 @@ export default function Section({
 	variant = 'light',
 	className,
 	innerClassName,
-	children,
+	children
 }: SectionProps) {
 	return (
 		<section
 			id={id}
 			className={cn(
-				'relative isolate scroll-mt-24 py-[var(--spacing-section-y)]',
+				'py-section-y relative isolate scroll-mt-24',
 				variant === 'dark'
-					? 'bg-[var(--color-surface-dark)] text-[var(--color-fg-dark)]'
-					: 'bg-[var(--color-surface)] text-[var(--color-fg)]',
+					? 'bg-(--color-surface-dark) text-(--color-fg-dark)'
+					: 'bg-(--color-surface) text-(--color-fg)',
 				className
 			)}
 		>
 			<div
 				className={cn(
-					'mx-auto max-w-[var(--container-w)] px-4 md:px-8 lg:px-12',
+					'mx-auto max-w-(--container-w) px-4 md:px-8 lg:px-12',
 					innerClassName
 				)}
 			>
