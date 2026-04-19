@@ -1,5 +1,42 @@
 @import 'tailwindcss';
 
+@theme {
+  /* surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-dark: #0B0B0B;
+
+  /* text */
+  --color-fg: #0B0B0B;
+  --color-fg-dark: #FFFFFF;
+  --color-muted: #6B6B6B;
+  --color-muted-dark: rgba(255,255,255,0.6);
+
+  /* decor strokes */
+  --color-line: rgba(0,0,0,0.15);
+  --color-line-dark: rgba(255,255,255,0.15);
+
+  /* radii */
+  --radius-tag: 999px;
+  --radius-button: 999px;
+  --radius-card: 16px;
+
+  /* typography - clamp values */
+  --text-hero: clamp(36px, 5vw, 72px);
+  --text-h2: clamp(28px, 3vw, 48px);
+  --text-h3: clamp(20px, 1.8vw, 28px);
+  --text-body: 17px;
+  --text-display: clamp(160px, 22vw, 320px);
+
+  /* spacing */
+  --spacing-section-y: clamp(64px, 8vw, 120px);
+
+  /* container */
+  --container-w: 1280px;
+
+  /* font */
+  --font-sans: 'Inter', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
