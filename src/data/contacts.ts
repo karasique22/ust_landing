@@ -6,6 +6,6 @@ export const contacts = {
 
 export const admission = {
 	switchAt: new Date('2026-06-20T00:00:00+03:00').getTime(),
-	beforeSwitchUrl: '#',
+	beforeSwitchUrl: 'https://rguk.ru/applicant/',
 	afterSwitchUrl: '#'
 }

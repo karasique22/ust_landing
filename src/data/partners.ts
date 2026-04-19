@@ -5,6 +5,6 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
-	{ id: 'znanie', name: 'Знание', logo: '/partners/logo-znanie.svg' },
-	{ id: 'maximum', name: 'MAXIMUM', logo: '/partners/logo-maximum.svg' }
+	{ id: 'znanie', name: 'Знание', logo: '/partners/logo-znanie.png' },
+	{ id: 'maximum', name: 'MAXIMUM', logo: '/partners/logo-maximum.png' }
 ]

@@ -3,36 +3,53 @@ export interface Teacher {
 	name: string
 	role: string
 	photo: string
-	achievements: [string, string, string]
+	achievements: string[]
 }
 
 export const teachers: Teacher[] = [
 	{
-		id: 'mitkin',
-		name: 'Миткин Сергей Борисович',
-		role: 'Доктор экономических наук, профессор',
-		photo: '/teachers/placeholder.jpg',
-		achievements: ['Достижение 1', 'Достижение 2', 'Достижение 3']
+		id: 'mityakin',
+		name: 'Вадим Митякин',
+		role: 'Наставник курса',
+		photo: '/teachers/mityakin.png',
+		achievements: [
+			'Бизнес-консультант',
+			'Методолог',
+			'Автор книги «Метод параноика»'
+		]
 	},
 	{
-		id: 'bibulatova',
-		name: 'Бибулатова Наталья Петровна',
-		role: 'Кандидат педагогических наук, доцент',
-		photo: '/teachers/placeholder.jpg',
-		achievements: ['Достижение 1', 'Достижение 2', 'Достижение 3']
+		id: 'bikbulatova',
+		name: 'Бикбулатова Альбина Ахатовна',
+		role: 'Наставник курса',
+		photo: '/teachers/bikbulatova.png',
+		achievements: [
+			'Директор Департамента по работе с образовательными организациями Российского общества «Знание»'
+		]
 	},
 	{
-		id: 'ivanov-1',
-		name: 'Иванов Александр Иванович',
-		role: 'Эксперт в области EdTech',
-		photo: '/teachers/placeholder.jpg',
-		achievements: ['Достижение 1', 'Достижение 2', 'Достижение 3']
+		id: 'sachkov',
+		name: 'Сачков Александр Александрович',
+		role: 'Наставник курса',
+		photo: '/teachers/sachkov.jpg',
+		achievements: [
+			'Руководитель направления блока реализации стратегических проектов VK'
+		]
 	},
 	{
-		id: 'ivanov-2',
-		name: 'Иванов Дмитрий Сергеевич',
-		role: 'Продакт-менеджер, 10+ лет в образовании',
-		photo: '/teachers/placeholder.jpg',
-		achievements: ['Достижение 1', 'Достижение 2', 'Достижение 3']
+		id: 'hvostov',
+		name: 'Хвостов Александр Викторович',
+		role: 'Наставник курса',
+		photo: '/teachers/hvostov.jpg',
+		achievements: ['Директор по связям с образовательным сообществом MAXIMUM']
+	},
+	{
+		id: 'yanahov',
+		name: 'Янахов Дамир Фаритович',
+		role: 'Наставник курса',
+		photo: '/teachers/yanahov.jpg',
+		achievements: [
+			'Руководитель направления по развитию кадрового потенциала ПКК РЭО'
+		]
 	}
 ]
