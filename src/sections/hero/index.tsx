@@ -1,7 +1,10 @@
 'use client'
 
-import { SiteHeader } from '@/components/layout/SiteHeader'
 import { useApplicationDialog } from '@/components/form/useApplicationDialog'
+import { SiteHeader } from '@/components/layout/SiteHeader'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+
 import HeroDecor from './HeroDecor'
 
 export default function Hero() {
@@ -10,21 +13,32 @@ export default function Hero() {
 	return (
 		<section
 			id="top"
-			className="relative min-h-svh bg-[var(--color-surface-dark)] text-[var(--color-fg-dark)] overflow-hidden flex flex-col"
+			className="relative flex min-h-svh flex-col overflow-hidden bg-(--color-surface-dark) text-(--color-fg-dark)"
 		>
 			<SiteHeader />
-			<div className="flex-1 flex flex-col items-center justify-center text-center px-4 md:px-8 lg:px-12 py-16">
+			<div className="relative flex flex-1 flex-col items-center justify-center px-4 py-16 text-center md:px-8 lg:px-12">
 				<HeroDecor />
-				<h1 className="text-[var(--text-hero)] font-semibold tracking-[-0.02em] leading-[1.05] max-w-4xl">
-					Устойчивые продукты<br className="hidden md:block" /> онлайн-образования
+				<Image
+					className="relative mb-8 md:hidden"
+					src="/icons/logo.svg"
+					alt="Онлайн продукты."
+					width={220}
+					height={34}
+				/>
+				<h1 className="text-hero relative max-w-4xl leading-[1.05] font-semibold tracking-[-0.02em]">
+					Устойчивые продукты
+					<br className="hidden md:block" /> онлайн-образования
 				</h1>
-				<p className="text-lg opacity-80 mt-6 max-w-xl">Магистерская программа нового поколения</p>
-				<button
+				<p className="relative mt-6 max-w-xl text-lg font-medium md:text-xl">
+					Магистерская программа нового поколения
+				</p>
+				<Button
 					onClick={open}
-					className="mt-10 bg-white text-black rounded-full px-8 py-4 font-medium text-sm hover:bg-white/90 transition-colors w-full md:w-auto"
+					variant={'gradient'}
+					className="relative mt-10 w-full font-medium md:w-auto"
 				>
 					Оставить заявку
-				</button>
+				</Button>
 			</div>
 		</section>
 	)

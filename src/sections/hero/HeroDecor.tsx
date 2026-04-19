@@ -1,9 +1,19 @@
-import RingsEllipse from '@/components/common/RingsEllipse'
+import Image from 'next/image'
 
 export default function HeroDecor() {
 	return (
-		<div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 hidden md:block w-[800px] opacity-20 pointer-events-none">
-			<RingsEllipse color="white" />
+		<div
+			aria-hidden="true"
+			className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center"
+		>
+			<Image
+				src="/decor/hero-rings.svg"
+				alt=""
+				width={972}
+				height={939}
+				priority
+				className="h-auto max-w-243 antialiased"
+			/>
 		</div>
 	)
 }

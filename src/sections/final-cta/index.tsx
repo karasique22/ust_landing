@@ -1,6 +1,6 @@
 'use client'
 import Section from '@/components/common/Section'
-import RingsEllipse from '@/components/common/RingsEllipse'
+import Image from 'next/image'
 import { AdmissionLink } from '@/components/common/AdmissionLink'
 import { useApplicationDialog } from '@/components/form/useApplicationDialog'
 
@@ -8,11 +8,13 @@ export default function FinalCta() {
 	const { open } = useApplicationDialog()
 	return (
 		<Section id="admission" variant="light" className="overflow-hidden">
-			<RingsEllipse
-				className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 w-full hidden md:block text-black"
-				color="currentColor"
-				strokeWidth={0.5}
-				count={6}
+			<Image
+				src="/decor/final-cta-rings.svg"
+				alt=""
+				aria-hidden="true"
+				width={1441}
+				height={774}
+				className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-auto w-full md:block"
 			/>
 			<div className="relative z-10 flex flex-col items-center text-center">
 				<h2 className="text-[var(--text-h2)] font-semibold tracking-[-0.02em] leading-[1.05] max-w-3xl">
