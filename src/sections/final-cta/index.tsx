@@ -32,7 +32,7 @@ export default function FinalCta() {
 					size="hero"
 					as="h1"
 					align="center"
-					className="leading-[1.21]"
+					className="leading-[1.2]"
 				>
 					Создавайте{' '}
 					<span className="bg-gray-300">образовательные продукты будущего</span>{' '}

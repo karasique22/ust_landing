@@ -7,7 +7,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-	title: 'Устойчивые продукты онлайн-образования | Магистратура Университета Косыгина',
+	title:
+		'Устойчивые продукты онлайн-образования | Магистратура Университета Косыгина',
 	description:
 		'Магистерская программа нового поколения. Диплом как стартап, профессиональный трекинг, 2 квалификации в одном дипломе. Поступление по портфолио.',
 	keywords: [
@@ -16,24 +17,25 @@ export const metadata: Metadata = {
 		'EdTech',
 		'диплом как стартап',
 		'профессиональный трекинг',
-		'Университет Косыгина',
+		'Университет Косыгина'
 	],
 	openGraph: {
 		title: 'Устойчивые продукты онлайн-образования',
-		description: 'Магистерская программа нового поколения Университета Косыгина',
+		description:
+			'Магистерская программа нового поколения Университета Косыгина',
 		type: 'website',
-		locale: 'ru_RU',
+		locale: 'ru_RU'
 	},
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Устойчивые продукты онлайн-образования',
-		description: 'Магистерская программа нового поколения Университета Косыгина',
+		description: 'Магистерская программа нового поколения Университета Косыгина'
 	},
-	robots: { index: true, follow: true },
+	robots: { index: true, follow: true }
 }
 
 export default function RootLayout({
-	children,
+	children
 }: {
 	children: React.ReactNode
 }) {
@@ -41,10 +43,7 @@ export default function RootLayout({
 		<html lang="ru">
 			<body className={inter.className}>
 				{children}
-				<Toaster
-					position="bottom-center"
-					richColors
-				/>
+				<Toaster position="bottom-center" />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
@@ -66,12 +65,12 @@ export default function RootLayout({
 										teaches: [
 											'Разработка образовательных продуктов',
 											'Управление EdTech-платформами',
-											'ИИ в образовании',
-										],
-									},
-								],
-							},
-						}),
+											'ИИ в образовании'
+										]
+									}
+								]
+							}
+						})
 					}}
 				/>
 			</body>
