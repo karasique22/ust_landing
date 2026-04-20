@@ -17,7 +17,7 @@ export function TeacherCard({ teacher }: { teacher: Teacher }) {
 					<p className="leading-tight font-semibold text-(--color-fg-dark) select-text">
 						{teacher.name}
 					</p>
-					<p className="text-xs tracking-wide text-(--color-fg-dark) uppercase opacity-60">
+					<p className="text-xs tracking-wide text-(--color-fg-dark) opacity-60">
 						{teacher.role}
 					</p>
 				</div>

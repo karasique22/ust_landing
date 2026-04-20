@@ -1,30 +1,42 @@
-import Image from 'next/image'
 import { contacts } from '@/data/contacts'
+import Image from 'next/image'
 
 export function SiteFooter() {
 	return (
-		<footer className="bg-[var(--color-surface-dark)] text-[var(--color-fg-dark)] px-4 md:px-8 lg:px-12 py-12">
-			<div className="max-w-[var(--container-w)] mx-auto">
-				<p className="text-sm opacity-60">{contacts.legalName}</p>
-				<div className="grid md:grid-cols-2 gap-8 mt-6">
-					<div>
+		<footer className="flex flex-col bg-(--color-surface-dark) px-4 py-12 text-(--color-fg-dark) md:px-8 lg:px-12">
+			<div className="mx-auto w-full max-w-(--container-w)">
+				<div className="flex items-stretch justify-between gap-8">
+					<div className="flex flex-col justify-between gap-8">
 						<Image
-							src="/icons/logo-kosygin.svg"
+							src="/icons/logo-rgu.svg"
 							alt="Университет Косыгина"
-							width={40}
-							height={40}
+							width={195}
+							height={70}
 						/>
-						<p className="tracking-widest text-sm mt-2 uppercase">Университет Косыгина</p>
-						<p className="text-sm opacity-60 mt-2">{contacts.address}</p>
+						<div>
+							<p className="text-sm opacity-60">Адрес:</p>
+							<a
+								href={`https://maps.google.com/?q=${contacts.address}`}
+								className="mt-1 inline-block text-sm underline hover:no-underline"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{contacts.address}
+							</a>
+						</div>
 					</div>
-					<div>
-						<p className="text-sm opacity-60">Напишите нам:</p>
-						<a
-							href={`mailto:${contacts.email}`}
-							className="text-sm underline hover:no-underline mt-1 inline-block"
-						>
-							{contacts.email}
-						</a>
+
+					<div className="flex flex-col items-start justify-between gap-8">
+						<p className="max-w-xs text-sm opacity-60">{contacts.legalName}</p>
+						<div>
+							<p className="text-sm opacity-60">Напишите нам:</p>
+							<a
+								href={`mailto:${contacts.email}`}
+								className="mt-1 inline-block text-sm hover:underline"
+							>
+								{contacts.email}
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

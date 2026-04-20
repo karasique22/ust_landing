@@ -10,15 +10,15 @@ export default function Partners() {
 				as="h1"
 				size="hero"
 				align="center"
-				className="mb-12"
+				className="mb-8 md:mb-12"
 			>
 				Генеральные партнёры программы:
 			</SectionHeading>
-			<div className="flex flex-wrap items-center justify-center gap-12">
+			<div className="flex flex-wrap items-center justify-center gap-0 md:gap-12">
 				{partners.map(partner => (
 					<div
 						key={partner.id}
-						className="relative h-20 w-auto opacity-80 grayscale transition-opacity hover:opacity-100"
+						className="relative h-20 w-auto transition-opacity hover:opacity-100 md:opacity-80 md:grayscale"
 					>
 						<Image
 							src={partner.logo}

@@ -5,26 +5,37 @@ import { trackingIntro, trackingTags } from '@/data/tracking-tags'
 export default function ProfessionalTracking() {
 	const tagsCount = trackingTags.length
 	const lineHeight = 100 / tagsCount
-	
+
 	return (
 		<Section variant="light">
-			<div className="grid md:grid-cols-2 gap-12 items-start">
+			<div className="grid items-start gap-12 md:grid-cols-2">
 				{/* Left */}
 				<div className="flex flex-col gap-6">
-					<SectionHeading size="h2">Профессиональный трекинг и акселерация</SectionHeading>
-					<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
-						Университет выступает партнером каждого студента и выпускника программы.
+					<SectionHeading size="h2">
+						Профессиональный трекинг и акселерация
+					</SectionHeading>
+					<p className="max-w-sm leading-relaxed text-(--text-body) opacity-60">
+						Университет выступает партнером каждого студента и выпускника
+						программы.
 					</p>
-					<p className="text-(--text-body) opacity-60 leading-relaxed max-w-sm">
-						Команды получают экспертное сопровождение на всех ключевых этапах работы над продуктом.
+					<p className="max-w-sm leading-relaxed text-(--text-body) opacity-60">
+						Команды получают экспертное сопровождение на всех ключевых этапах
+						работы над продуктом.
 					</p>
 					<div className="mt-4 md:hidden">
-						<p className="text-sm font-medium opacity-80 mb-4">{trackingIntro}</p>
+						<p className="mb-4 text-sm font-medium opacity-80">
+							{trackingIntro}
+						</p>
 						<div className="flex flex-col gap-3">
 							{trackingTags.map((tag, i) => (
-								<div key={i} className="flex items-start gap-3">
-									<div className="w-1.5 h-1.5 bg-current opacity-60 mt-1.5 shrink-0 rounded-full" />
-									<span className="text-sm opacity-60 leading-relaxed">{tag}</span>
+								<div
+									key={i}
+									className="flex items-start gap-3"
+								>
+									<div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-60" />
+									<span className="text-sm leading-relaxed opacity-60">
+										{tag}
+									</span>
 								</div>
 							))}
 						</div>
@@ -36,11 +47,11 @@ export default function ProfessionalTracking() {
 					<svg
 						viewBox="0 0 100 100"
 						preserveAspectRatio="none"
-						className="absolute inset-0 w-full h-full text-line"
+						className="text-line absolute inset-0 h-full w-full"
 						aria-hidden="true"
 					>
 						{trackingTags.map((_, i) => {
-							const yPosition = (lineHeight / 2) + (i * lineHeight)
+							const yPosition = lineHeight / 2 + i * lineHeight
 							return (
 								<g key={i}>
 									<line
@@ -63,9 +74,14 @@ export default function ProfessionalTracking() {
 						})}
 					</svg>
 					<div className="relative z-10 flex flex-col gap-5 pl-12">
-						<p className="text-sm font-medium opacity-80 mb-2">{trackingIntro}</p>
+						<p className="mb-2 text-sm font-medium opacity-80">
+							{trackingIntro}
+						</p>
 						{trackingTags.map((tag, i) => (
-							<div key={i} className="text-sm opacity-60 leading-relaxed max-w-xs">
+							<div
+								key={i}
+								className="max-w-xs text-sm leading-relaxed opacity-60"
+							>
 								{tag}
 							</div>
 						))}

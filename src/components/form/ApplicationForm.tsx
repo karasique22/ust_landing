@@ -1,12 +1,10 @@
 'use client'
+import { Button } from '@/components/ui/button'
+import { sendApplication } from '@/lib/telegram'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
 import { IMaskInput } from 'react-imask'
 import * as z from 'zod'
-
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { sendApplication } from '@/lib/telegram'
 
 const schema = z.object({
 	name: z
@@ -28,6 +26,16 @@ interface ApplicationFormProps {
 	onSuccess: () => void
 	onError?: (err: Error) => void
 }
+
+const inputWrapperClass = [
+	'relative overflow-hidden rounded-2xl',
+	'bg-[linear-gradient(90deg,rgba(255,255,255,0.1),rgba(0,0,0,0.1))] backdrop-blur-md',
+	'border border-white/40',
+	'shadow-[1px_4px_10px_rgba(0,0,0,0.25)]'
+].join(' ')
+
+const inputClass =
+	'relative z-10 h-14 w-full bg-transparent px-6 text-lg text-black placeholder:text-black/40 outline-none'
 
 export function ApplicationForm({ onSuccess, onError }: ApplicationFormProps) {
 	const {
@@ -52,55 +60,71 @@ export function ApplicationForm({ onSuccess, onError }: ApplicationFormProps) {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col gap-4"
+			noValidate
+			className="mx-auto flex w-full max-w-xl flex-col items-center gap-4"
 		>
-			<div>
-				<Input
-					placeholder="ФИО"
-					{...register('name')}
-				/>
+			<div className="flex w-full flex-col gap-1">
+				<div className={inputWrapperClass}>
+					<input
+						{...register('name')}
+						type="text"
+						placeholder="ФИО"
+						aria-invalid={!!errors.name}
+						className={inputClass}
+					/>
+				</div>
 				{errors.name && (
-					<p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+					<p className="text-sm text-red-400">{errors.name.message}</p>
 				)}
 			</div>
 
-			<div>
-				<Controller
-					name="phone"
-					control={control}
-					render={({ field }) => (
-						<IMaskInput
-							mask="+7 (000) 000-00-00"
-							onAccept={val => field.onChange(val)}
-							value={field.value}
-							placeholder="+7 (000) 000-00-00"
-							className="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
-						/>
-					)}
-				/>
+			<div className="flex w-full flex-col gap-1">
+				<div className={inputWrapperClass}>
+					<Controller
+						name="phone"
+						control={control}
+						render={({ field }) => (
+							<IMaskInput
+								{...field}
+								mask="+7 (000) 000-00-00"
+								placeholder="Телефон"
+								inputRef={field.ref}
+								onAccept={value => field.onChange(value)}
+								aria-invalid={!!errors.phone}
+								className={inputClass}
+							/>
+						)}
+					/>
+				</div>
 				{errors.phone && (
-					<p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
+					<p className="text-sm text-red-400">{errors.phone.message}</p>
 				)}
 			</div>
 
-			<div>
-				<Input
-					type="email"
-					placeholder="Email"
-					{...register('email')}
-				/>
+			<div className="flex w-full flex-col gap-1">
+				<div className={inputWrapperClass}>
+					<input
+						{...register('email')}
+						type="email"
+						placeholder="Почта"
+						aria-invalid={!!errors.email}
+						className={inputClass}
+					/>
+				</div>
 				{errors.email && (
-					<p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+					<p className="text-sm text-red-400">{errors.email.message}</p>
 				)}
 			</div>
 
-			<Button
-				type="submit"
-				className="w-full"
-				disabled={isSubmitting}
-			>
-				Оставить заявку!
-			</Button>
+			<div className="flex justify-center pt-2">
+				<Button
+					type="submit"
+					variant="gradient"
+					disabled={isSubmitting}
+				>
+					{isSubmitting ? 'Отправляем...' : 'Оставить заявку!'}
+				</Button>
+			</div>
 		</form>
 	)
 }

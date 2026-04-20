@@ -11,7 +11,7 @@ export function X2Display() {
 				<span className="relative text-[150px] leading-none font-bold tracking-[-0.04em] md:text-[310px]">
 					X2
 				</span>
-				<div className="relative mb-4 bg-white text-xl leading-none font-semibold">
+				<div className="relative mb-4 rounded-md bg-white p-2 text-xl leading-none font-semibold">
 					возможностей <br />
 					поступления
 				</div>

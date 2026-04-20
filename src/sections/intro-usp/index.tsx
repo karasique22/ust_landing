@@ -5,7 +5,10 @@ import Image from 'next/image'
 
 export default function IntroUsp() {
 	return (
-		<Section variant="light">
+		<Section
+			id="about-program"
+			variant="light"
+		>
 			<div className="grid items-start gap-8 px-4 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-16">
 				{/* Left */}
 				<div>
@@ -23,12 +26,15 @@ export default function IntroUsp() {
 					/>
 				</div>
 				{/* Right */}
-				<ul className="flex flex-col gap-3 text-left font-semibold md:items-end">
-					{uspTags.map(tag => (
-						<li key={tag}>
-							<Tag variant="dark">{tag}</Tag>
-						</li>
-					))}
+
+				<ul className="flex flex-col text-left font-semibold md:items-end">
+					<div className="space-y-2">
+						{uspTags.map(tag => (
+							<li key={tag}>
+								<Tag>{tag}</Tag>
+							</li>
+						))}
+					</div>
 				</ul>
 			</div>
 		</Section>

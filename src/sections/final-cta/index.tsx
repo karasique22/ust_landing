@@ -1,38 +1,62 @@
 'use client'
-import Section from '@/components/common/Section'
-import Image from 'next/image'
 import { AdmissionLink } from '@/components/common/AdmissionLink'
+import Section from '@/components/common/Section'
+import SectionHeading from '@/components/common/SectionHeading'
 import { useApplicationDialog } from '@/components/form/useApplicationDialog'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function FinalCta() {
 	const { open } = useApplicationDialog()
 	return (
-		<Section id="admission" variant="light" className="overflow-hidden">
-			<Image
-				src="/decor/final-cta-rings.svg"
-				alt=""
+		<Section
+			id="admission"
+			variant="light"
+			className="overflow-hidden"
+		>
+			<div
 				aria-hidden="true"
-				width={1441}
-				height={774}
-				className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-auto w-full md:block"
-			/>
+				className="pointer-events-none absolute inset-x-0 bottom-0 flex h-full justify-center"
+			>
+				<Image
+					src="/decor/final-cta-rings.svg"
+					alt=""
+					width={1441}
+					height={774}
+					className="h-auto w-full max-w-243 scale-150 antialiased"
+				/>
+			</div>
 			<div className="relative z-10 flex flex-col items-center text-center">
-				<h2 className="text-[var(--text-h2)] font-semibold tracking-[-0.02em] leading-[1.05] max-w-3xl">
-					Создавайте образовательные продукты будущего вместе с Университетом Косыгина
-				</h2>
-				<p className="mt-6 text-sm opacity-60 max-w-lg leading-relaxed">
-					Подайте документы на поступление в магистратуру или получите консультацию по программе.
+				<SectionHeading
+					size="hero"
+					as="h1"
+					align="center"
+					className="leading-[1.21]"
+				>
+					Создавайте{' '}
+					<span className="bg-gray-300">образовательные продукты будущего</span>{' '}
+					вместе с Университетом Косыгина
+				</SectionHeading>
+				<p className="text-h3 mt-6 max-w-4xl text-sm leading-tight font-semibold">
+					Подайте документы и станьте частью нового поколения специалистов,
+					которые формируют будущее онлайн-образования.
 				</p>
-				<div className="mt-10 flex flex-col md:flex-row gap-4 w-full md:w-auto justify-center">
-					<button
-						onClick={open}
-						className="bg-[var(--color-surface-dark)] text-[var(--color-fg-dark)] rounded-full px-8 py-4 font-medium text-sm hover:opacity-90 transition-opacity w-full md:w-auto"
+				<div className="mt-10 flex w-full flex-col justify-center gap-4 md:w-auto">
+					<Button onClick={open}>Получить консультацию</Button>
+					<Button
+						asChild
+						variant="outline"
 					>
-						Получить консультацию
-					</button>
-					<AdmissionLink className="border border-[var(--color-fg)] text-[var(--color-fg)] rounded-full px-8 py-4 font-medium text-sm hover:bg-[var(--color-fg)] hover:text-[var(--color-fg-dark)] transition-colors w-full md:w-auto text-center">
-						Подать документы
-					</AdmissionLink>
+						<Link
+							className="w-full text-center"
+							href="https://rguk.ru/applicant/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Подать документы
+						</Link>
+					</Button>
 				</div>
 			</div>
 		</Section>

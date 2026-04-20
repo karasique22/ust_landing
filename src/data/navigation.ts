@@ -4,7 +4,7 @@ export interface NavItem {
 }
 
 export const navigation: NavItem[] = [
-	{ label: 'Поступление 2026', href: '#admission' },
 	{ label: 'О программе', href: '#about-program' },
-	{ label: 'Специальности', href: '#specialties' }
+	{ label: 'Специальности', href: '#specialties' },
+	{ label: 'Поступление 2026', href: '#admission' }
 ]

@@ -4,10 +4,7 @@ import { aboutIntroText, aboutPoints } from '@/data/about-points'
 
 export default function AboutProgram() {
 	return (
-		<Section
-			id="about-program"
-			variant="light"
-		>
+		<Section variant="light">
 			{/* Mobile: stacked order (black header first). Desktop: 3x2 grid */}
 			<div className="relative grid gap-0 border border-black font-semibold md:grid-cols-[1fr_1fr_2fr] md:grid-rows-[minmax(320px,auto)_auto]">
 				{/* Black "О программе" — shown FIRST on mobile, sits top-right on desktop */}

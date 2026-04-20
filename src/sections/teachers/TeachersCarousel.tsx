@@ -16,7 +16,7 @@ export function TeachersCarousel() {
 			<CarouselContent>
 				{teachers.map((teacher, i) => (
 					<CarouselItem
-						className="flex basis-1/4 flex-col"
+						className="flex basis-full flex-col md:basis-1/4"
 						key={i}
 					>
 						<TeacherCard teacher={teacher} />

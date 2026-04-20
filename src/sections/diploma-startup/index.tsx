@@ -5,14 +5,14 @@ import { diplomaSteps } from '@/data/diploma-steps'
 export default function DiplomaStartup() {
 	const stepsCount = diplomaSteps.length
 	const lineHeight = 100 / stepsCount
-	
+
 	return (
 		<Section variant="dark">
 			<div className="grid items-center gap-12 md:grid-cols-2">
 				{/* Left */}
 				<SectionHeading
 					size="h2"
-				className="text-(--color-fg-dark)"
+					className="text-(--color-fg-dark)"
 				>
 					Диплом как стартап
 				</SectionHeading>
@@ -26,7 +26,7 @@ export default function DiplomaStartup() {
 						aria-hidden="true"
 					>
 						{diplomaSteps.map((_, i) => {
-							const yPosition = (lineHeight / 2) + (i * lineHeight)
+							const yPosition = lineHeight / 2 + i * lineHeight
 							return (
 								<g key={i}>
 									<line
@@ -49,10 +49,10 @@ export default function DiplomaStartup() {
 						})}
 					</svg>
 					<ul className="flex flex-col gap-12 md:items-end">
-						{diplomaSteps.map((step) => (
+						{diplomaSteps.map(step => (
 							<li
 								key={step.number}
-								className="text-(--color-fg-dark) opacity-80 md:text-right text-sm leading-relaxed max-w-xs"
+								className="max-w-xs text-sm leading-relaxed text-(--color-fg-dark) opacity-80 md:text-right"
 							>
 								{step.title}
 							</li>

@@ -1,12 +1,11 @@
 'use client'
-import { toast } from 'sonner'
-
 import {
 	Dialog,
 	DialogContent,
 	DialogHeader,
 	DialogTitle
 } from '@/components/ui/dialog'
+import { toast } from 'sonner'
 
 import { ApplicationForm } from './ApplicationForm'
 import { useApplicationDialog } from './useApplicationDialog'
@@ -19,9 +18,9 @@ export function ApplicationDialog() {
 			open={isOpen}
 			onOpenChange={setOpen}
 		>
-			<DialogContent className="max-w-2xl p-6 md:p-10 mx-4">
-				<DialogHeader>
-					<DialogTitle className="text-2xl font-semibold">
+			<DialogContent className="rounded-2xl bg-white/85 p-8 text-black backdrop-blur-xl sm:max-w-4xl md:p-12">
+				<DialogHeader className="text-center">
+					<DialogTitle className="mx-auto text-4xl leading-tight font-bold md:text-5xl">
 						Получить консультацию!
 					</DialogTitle>
 				</DialogHeader>
