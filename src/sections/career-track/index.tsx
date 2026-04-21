@@ -12,6 +12,7 @@ export default function CareerTrack() {
 		<Section
 			id="specialties"
 			variant="light"
+			className="overflow-hidden"
 		>
 			{/* Top two-column */}
 			<div className="mb-8 grid items-start gap-8 md:grid-cols-2">

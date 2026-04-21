@@ -21,8 +21,8 @@ export default function Home() {
 			<AboutProgram />
 			<ProgramDescription />
 			<CareerTrack />
-			{/* <DiplomaStartup />
-			<ProfessionalTracking /> */}
+			<DiplomaStartup />
+			<ProfessionalTracking />
 			<Teachers />
 			<Partners />
 			<LearningFormat />
