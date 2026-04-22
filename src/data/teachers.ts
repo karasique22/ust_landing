@@ -51,5 +51,16 @@ export const teachers: Teacher[] = [
 		achievements: [
 			'Руководитель направления по развитию кадрового потенциала ПКК РЭО'
 		]
+	},
+	{
+		id: 'barysheva',
+		name: 'Екатерина Барышева',
+		role: 'Наставник курса',
+		photo: '/teachers/barysheva.jpg',
+		achievements: [
+			'Методолог',
+			'Педагогический дизайнер',
+			'Продюсер программ ДПО'
+		]
 	}
 ]
