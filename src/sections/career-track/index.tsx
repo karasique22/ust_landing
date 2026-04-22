@@ -45,7 +45,7 @@ export default function CareerTrack() {
 			{/* X2 display */}
 			<X2Display />
 			{/* Bottom: career steps */}
-			<div className="border-line mt-8 ml-auto grid w-8/12 grid-cols-1 gap-12 pt-8 md:grid-cols-3">
+			<div className="border-line mt-8 ml-auto grid w-5/6 grid-cols-1 gap-12 pt-8 md:grid-cols-3 lg:w-8/12">
 				{careerSteps.map(step => (
 					<NumberedItem
 						key={step.number}
