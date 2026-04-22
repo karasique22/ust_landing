@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function TeacherCard({ teacher }: { teacher: Teacher }) {
 	return (
-		<div className="group flex w-[calc(100vw-4rem)] grow flex-col gap-3 select-none md:w-[calc(50%-0.5rem)] lg:w-60">
+		<div className="group flex grow flex-col gap-3 select-none">
 			<div className="relative aspect-video overflow-hidden rounded-lg bg-white/10">
 				<Image
 					src={teacher.photo}
