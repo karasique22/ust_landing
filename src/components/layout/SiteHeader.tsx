@@ -5,6 +5,7 @@ import {
 	Sheet,
 	SheetClose,
 	SheetContent,
+	SheetTitle,
 	SheetTrigger
 } from '@/components/ui/sheet'
 import { navigation } from '@/data/navigation'
@@ -21,24 +22,34 @@ export function SiteHeader() {
 	}
 
 	return (
-		<header className="flex w-full items-center justify-between px-4 py-6 sm:px-12 md:px-8">
-			<Image
-				className="md:hidden"
-				src="/icons/logo-mini.svg"
-				alt="Онлайн продукты."
-				width={40}
-				height={45}
-			/>
+		<header className="z-10 flex w-full items-center justify-between px-4 py-6 sm:px-12 md:px-8">
+			<div className="flex gap-5 md:gap-10">
+				<Image
+					className="md:hidden"
+					src="/icons/logo-mini.svg"
+					alt="Онлайн продукты."
+					width={40}
+					height={45}
+				/>
 
-			<Image
-				className="hidden md:block"
-				src="/icons/logo.svg"
-				alt="Онлайн продукты."
-				width={288}
-				height={45}
-			/>
+				<Image
+					className="hidden md:block"
+					src="/icons/logo.svg"
+					alt="Онлайн продукты."
+					width={288}
+					height={45}
+				/>
 
-			<nav className="hidden gap-6 md:flex md:gap-15">
+				<Image
+					className="opacity-90 md:opacity-100"
+					src="/icons/logo-rgu.svg"
+					alt="РГУ им. А.Н. Косыгина"
+					width={133}
+					height={47}
+				/>
+			</div>
+
+			<nav className="hidden gap-6 lg:flex lg:gap-15">
 				{navigation.map(item => (
 					<a
 						key={item.href}
@@ -56,7 +67,7 @@ export function SiteHeader() {
 			>
 				<SheetTrigger asChild>
 					<button
-						className="text-2xl leading-none text-white md:hidden"
+						className="text-2xl leading-none text-white lg:hidden"
 						aria-label="Открыть меню"
 					>
 						☰
@@ -66,6 +77,7 @@ export function SiteHeader() {
 					side="right"
 					className="flex flex-col bg-white p-6"
 				>
+					<SheetTitle className="sr-only">Навигация</SheetTitle>
 					<nav className="mt-8 flex flex-col gap-6">
 						{navigation.map(item => (
 							<SheetClose

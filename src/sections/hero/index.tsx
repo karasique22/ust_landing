@@ -25,6 +25,7 @@ export default function Hero() {
 					width={220}
 					height={34}
 				/>
+
 				<h1 className="text-hero relative max-w-4xl leading-[1.05] font-semibold tracking-[-0.02em]">
 					Устойчивые продукты
 					<br className="hidden md:block" /> онлайн-образования
