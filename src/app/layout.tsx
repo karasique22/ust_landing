@@ -31,6 +31,15 @@ export const metadata: Metadata = {
 		title: 'Устойчивые продукты онлайн-образования',
 		description: 'Магистерская программа нового поколения Университета Косыгина'
 	},
+	icons: {
+		icon: [
+			{ url: '/favicon.ico' },
+			{ url: '/favicon.svg', type: 'image/svg+xml' },
+			{ url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
+		],
+		apple: [{ url: '/apple-touch-icon.png' }]
+	},
+	manifest: '/site.webmanifest',
 	robots: { index: true, follow: true }
 }
 
