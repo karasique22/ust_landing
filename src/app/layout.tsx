@@ -19,17 +19,30 @@ export const metadata: Metadata = {
 		'профессиональный трекинг',
 		'Университет Косыгина'
 	],
+	metadataBase: new URL('https://xn--80aiofblddfjl1al8i.xn--p1ai'),
 	openGraph: {
 		title: 'Устойчивые продукты онлайн-образования',
 		description:
 			'Магистерская программа нового поколения Университета Косыгина',
 		type: 'website',
-		locale: 'ru_RU'
+		locale: 'ru_RU',
+		url: 'https://онлайнпродукты.рф',
+		siteName: 'Устойчивые продукты онлайн-образования',
+		images: [
+			{
+				url: '/og-image.jpg',
+				width: 1200,
+				height: 630,
+				type: 'image/jpeg',
+				alt: 'Устойчивые продукты онлайн-образования — Университет Косыгина'
+			}
+		]
 	},
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Устойчивые продукты онлайн-образования',
-		description: 'Магистерская программа нового поколения Университета Косыгина'
+		description: 'Магистерская программа нового поколения Университета Косыгина',
+		images: ['/og-image.jpg']
 	},
 	icons: {
 		icon: [
