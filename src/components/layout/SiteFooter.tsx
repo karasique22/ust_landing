@@ -39,6 +39,33 @@ export function SiteFooter() {
 						</div>
 					</div>
 				</div>
+
+				<div className="mt-6 border-t border-white/10 pt-4 text-sm opacity-80">
+					<a
+						href="/privacy"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="mr-4 underline"
+					>
+						Политика конфиденциальности
+					</a>
+					<a
+						href="/user-agreement"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="underline"
+					>
+						Пользовательское соглашение
+					</a>
+					<a
+						href="/consent"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="ml-4 underline"
+					>
+						Согласие на обработку ПД
+					</a>
+				</div>
 			</div>
 		</footer>
 	)

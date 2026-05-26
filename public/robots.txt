@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://онлайнпродукты.рф/sitemap.xml
-Sitemap: https://онлайнпроекты.рф/sitemap.xml
+Sitemap: /sitemap.xml

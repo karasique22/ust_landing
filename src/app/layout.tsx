@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
+import CookieBanner from '@/components/ui/CookieBanner'
 
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://онлайнпродукты.рф'
 
 export const metadata: Metadata = {
 	title:
@@ -19,14 +21,14 @@ export const metadata: Metadata = {
 		'профессиональный трекинг',
 		'Университет Косыгина'
 	],
-	metadataBase: new URL('https://xn--80aiofblddfjl1al8i.xn--p1ai'),
+	metadataBase: new URL(SITE_URL),
 	openGraph: {
 		title: 'Устойчивые продукты онлайн-образования',
 		description:
 			'Магистерская программа нового поколения Университета Косыгина',
 		type: 'website',
 		locale: 'ru_RU',
-		url: 'https://онлайнпродукты.рф',
+		url: SITE_URL,
 		siteName: 'Устойчивые продукты онлайн-образования',
 		images: [
 			{
@@ -65,6 +67,7 @@ export default function RootLayout({
 		<html lang="ru">
 			<body className={inter.className}>
 				{children}
+				<CookieBanner />
 				<Toaster position="bottom-center" />
 				<script
 					type="application/ld+json"
