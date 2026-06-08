@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
+import { sendToSheet } from '@/lib/sheets'
 import { sendApplication } from '@/lib/telegram'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, useForm } from 'react-hook-form'
@@ -58,7 +59,8 @@ export function ApplicationForm({ onSuccess, onError }: ApplicationFormProps) {
 
 	const onSubmit = async (data: FormData) => {
 		try {
-			await sendApplication({ name: data.name, phone: data.phone, email: data.email })
+			const payload = { name: data.name, phone: data.phone, email: data.email }
+			await Promise.all([sendApplication(payload), sendToSheet(payload)])
 			onSuccess()
 		} catch (err) {
 			onError?.(err instanceof Error ? err : new Error(String(err)))
