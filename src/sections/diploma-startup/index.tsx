@@ -8,7 +8,7 @@ export default function DiplomaStartup() {
 	return (
 		<Section variant="dark">
 			{/* Desktop: diagram fills container, heading overlays bottom-left */}
-			<div className="relative hidden aspect-1000/520 md:block">
+			<div className="relative hidden aspect-1000/520 lg:block">
 				<DiplomaDiagramDesktop className="absolute inset-0 h-full w-full" />
 				<SectionHeading
 					as="h1"
@@ -22,7 +22,7 @@ export default function DiplomaStartup() {
 			</div>
 
 			{/* Mobile: heading above diagram */}
-			<div className="flex flex-col gap-8 md:hidden">
+			<div className="flex flex-col gap-8 lg:hidden">
 				<SectionHeading
 					as="h1"
 					size="hero"

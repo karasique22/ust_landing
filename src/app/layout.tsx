@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
+import { ScrollToTop } from '@/components/common/ScrollToTop'
 import CookieBanner from '@/components/ui/CookieBanner'
 
 import './globals.css'
@@ -67,6 +68,7 @@ export default function RootLayout({
 		<html lang="ru">
 			<body className={inter.className}>
 				{children}
+				<ScrollToTop />
 				<CookieBanner />
 				<Toaster position="bottom-center" />
 				<script

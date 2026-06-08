@@ -12,8 +12,8 @@ export default function ProfessionalTracking() {
 			className="overflow-hidden"
 		>
 			{/* Desktop */}
-			<div className="relative hidden aspect-1000/600 w-full overflow-visible md:block">
-				<TrackingDiagramDesktop className="absolute bottom-0 hidden w-[calc(100%-6rem)] translate-x-20 md:-right-[calc(max(0px,(100vw-1280px)/2))] md:block lg:-right-[calc(max(0px,(100vw-1280px)/2))]" />
+			<div className="relative hidden aspect-1000/600 w-full overflow-visible lg:block">
+				<TrackingDiagramDesktop className="absolute bottom-0 hidden w-[calc(100%-6rem)] translate-x-20 lg:-right-[calc(max(0px,(100vw-1280px)/2))] lg:block lg:-right-[calc(max(0px,(100vw-1280px)/2))]" />
 				<div className="absolute inset-0 flex max-w-[45%] flex-col gap-6">
 					<Image
 						src="/icons/logo-rgu-dark.svg"
@@ -42,7 +42,7 @@ export default function ProfessionalTracking() {
 			</div>
 
 			{/* Mobile */}
-			<div className="flex flex-col gap-8 md:hidden">
+			<div className="flex flex-col gap-8 lg:hidden">
 				<Image
 					src="/icons/logo-rgu-dark.svg"
 					alt=""

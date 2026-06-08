@@ -19,7 +19,7 @@ export default function Section({
 		<section
 			id={id}
 			className={cn(
-				'py-section-y relative isolate scroll-mt-24',
+				'py-section-y relative isolate',
 				variant === 'dark'
 					? 'bg-(--color-surface-dark) text-(--color-fg-dark)'
 					: 'bg-(--color-surface) text-(--color-fg)',

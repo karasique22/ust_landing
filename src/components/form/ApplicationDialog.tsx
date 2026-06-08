@@ -18,7 +18,7 @@ export function ApplicationDialog() {
 			open={isOpen}
 			onOpenChange={setOpen}
 		>
-			<DialogContent className="rounded-2xl bg-white/85 p-8 text-black backdrop-blur-xl sm:max-w-4xl md:p-12">
+			<DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl bg-white/85 p-8 text-black backdrop-blur-xl sm:max-w-4xl md:p-12">
 				<DialogHeader className="text-center">
 					<DialogTitle className="mx-auto text-4xl leading-tight font-bold md:text-5xl">
 						Получить консультацию!
