@@ -60,7 +60,11 @@ export function ApplicationForm({ onSuccess, onError }: ApplicationFormProps) {
 	const onSubmit = async (data: FormData) => {
 		try {
 			const payload = { name: data.name, phone: data.phone, email: data.email }
-			await Promise.all([sendApplication(payload), sendToSheet(payload)])
+			
+			// Fire-and-forget to sheets so it doesn't block UI
+			sendToSheet(payload).catch(console.error)
+			await sendApplication(payload)
+			
 			onSuccess()
 		} catch (err) {
 			onError?.(err instanceof Error ? err : new Error(String(err)))
